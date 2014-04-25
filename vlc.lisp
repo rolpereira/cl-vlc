@@ -45,14 +45,14 @@
     (telnetlib:read-until telnet "> " :timeout timeout :case-insensitive-mode t)))
 
 (defun logout (videolan-instance)
-  (telnetlib:write-ln (videolan-instance-telnet videolan-instance) "exit")
-  (telnetlib:close-telnet-session (videolan-instance-telnet videolan-instance))
-  (setf (videolan-instance-telnet videolan-instance) nil))
+  (telnetlib:write-ln (videolan-connection-telnet videolan-instance) "exit")
+  (telnetlib:close-telnet-session (videolan-connection-telnet videolan-instance))
+  (setf (videolan-connection-telnet videolan-instance) nil))
 
 (defun shutdown (videolan-instance)
-  (telnetlib:write-ln (videolan-instance-telnet videolan-instance) "shutdown")
-  (telnetlib:close-telnet-session (videolan-instance-telnet videolan-instance))
-  (setf (videolan-instance-telnet videolan-instance) nil))
+  (telnetlib:write-ln (videolan-connection-telnet videolan-instance) "shutdown")
+  (telnetlib:close-telnet-session (videolan-connection-telnet videolan-instance))
+  (setf (videolan-connection-telnet videolan-instance) nil))
 
 (defun cmd (videolan-instance cmd)
   (let ((tn (videolan-connection-telnet videolan-instance)))
