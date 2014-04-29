@@ -20,6 +20,10 @@ following command:
     vlc --intf telnet
 
 
+If you have already started VLC, you can also start the telnet
+interface by going to the View menu and selecting the option "Add
+interface" and then picking the "Telnet" option.
+
 # Installation #
 
 Currently this module isn't available in
