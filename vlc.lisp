@@ -68,7 +68,7 @@
       (alexandria:ends-with #\] string ))))
 
 (defun name-of-optional-argument (argument-list)
-  (assert (optional-argument-p argument-list) (argument-list) "~a is not optional argument list" argument-list)
+  (assert (optional-argument-p argument-list) (argument-list) "~a is not an optional argument list" argument-list)
   (let ((string (symbol-name argument-list)))
     (subseq string 1 (1- (length string)))))
 
